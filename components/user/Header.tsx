@@ -26,7 +26,7 @@ export const Header = () => {
       &nbsp;
       &nbsp;
       <ShowWithLogin>
-        <a onClick={()=> {setPage('profile')}}>Profile</a>
+      <div>hoge</div>
       </ShowWithLogin>
       &nbsp;
       &nbsp;

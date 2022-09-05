@@ -1,10 +1,11 @@
 import { useAuth } from 'components/user/AuthContext'
-import React, { ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
 
 type Props = {
-  children: ReactNode
+  children?: ReactNode
 }
-export const ShowWithLogin = ({ children }: Props): ReactNode => {
+
+export const ShowWithLogin: FC<Props> = ({ children }) => {
   const { currentUser } = useAuth()
 
   if (currentUser === 'true') {
@@ -18,7 +19,7 @@ export const ShowWithLogin = ({ children }: Props): ReactNode => {
   }
 }
 
-export const ShowWithNoLogin = ({ children }: Props): ReactNode => {
+export const ShowWithNoLogin: FC<Props> = ({ children }) => {
   const { currentUser } = useAuth()
 
   if (currentUser === 'false') {

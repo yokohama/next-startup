@@ -5,7 +5,7 @@ import { AuthProvider } from 'components/user/AuthContext'
 
 import { Index } from 'components/user/Index'
 import { SignIn } from 'components/user/SignIn'
-import { About } from 'components/user/About'
+import { About } from 'components/About'
 import { Dashboard } from 'components/user/Dashboard'
 import { Profile } from 'components/user/Profile'
 
@@ -23,7 +23,7 @@ export const Layout = () => {
     <AuthProvider>
       <Header />
       <div>
-        {PageComponents[page]}
+        { PageComponents[page] }
       </div>
       <Footer />
     </AuthProvider>
