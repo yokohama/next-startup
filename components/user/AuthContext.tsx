@@ -1,11 +1,27 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from "react"
+import { 
+  ReactNode, 
+  createContext, 
+  useContext, 
+  useState, 
+  useEffect
+} from 'react'
+
+import { initializeApp, FirebaseApp } from 'firebase/app'
+import {
+  User,
+  getAuth,
+  onAuthStateChanged
+} from 'firebase/auth'
+import { FirebaseConfig } from 'components/FirebaseConfig'
 
 type AuthContextType = {
-    currentUser: string
-    setCurrentUser: Dispatch<SetStateAction<string>>
+  currentUser: User | null,
 }
 
-const AuthContext = createContext<AuthContextType>({currentUser: 'false', setCurrentUser: ()=>{}})
+const app = initializeApp(FirebaseConfig)
+const auth = getAuth(app)
+
+const AuthContext = createContext<AuthContextType>({currentUser: auth.currentUser})
 export const useAuth = () => {
     return useContext(AuthContext)
 }
@@ -14,11 +30,18 @@ type Props = {
     children: ReactNode
 }
 export const AuthProvider = ({ children }: Props) => {
-  const [currentUser, setCurrentUser] = useState('false')
+  const [currentUser, setCurrentUser] = useState(auth.currentUser)
+  
+  useEffect(() => {
+    return onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user)
+    })
+  }, [])
+  
   const values: AuthContextType = {
     currentUser,
-    setCurrentUser
   }
+  
   return (
     <AuthContext.Provider value={values}>
       {children}

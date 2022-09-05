@@ -21,11 +21,11 @@ export const Layout = () => {
   const { page } = usePage()
   return (
     <AuthProvider>
-      <Header />
-      <div>
-        { PageComponents[page] }
-      </div>
-      <Footer />
+      <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
+        <Header />
+        <div>{ PageComponents[page] }</div>
+        <Footer />
+      </main>
     </AuthProvider>
   )
 }

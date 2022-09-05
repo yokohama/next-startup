@@ -7,28 +7,10 @@ type Props = {
 
 export const ShowWithLogin: FC<Props> = ({ children }) => {
   const { currentUser } = useAuth()
-
-  if (currentUser === 'true') {
-    return(
-      <>
-        {children}
-      </>
-    )
-  } else {
-    return <></>
-  }
+  return currentUser ? <>{children}</> : <></>
 }
 
 export const ShowWithNoLogin: FC<Props> = ({ children }) => {
   const { currentUser } = useAuth()
-
-  if (currentUser === 'false') {
-    return(
-      <>
-        {children}
-      </>
-    )
-  } else {
-    return <></>
-  }
+  return !currentUser ? <>{children}</> : <></>
 }
