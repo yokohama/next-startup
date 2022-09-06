@@ -10,28 +10,45 @@ import { initializeApp, FirebaseApp } from 'firebase/app'
 import {
   User,
   getAuth,
-  onAuthStateChanged
+  GoogleAuthProvider,
+  signInWithRedirect,
+  onAuthStateChanged,
 } from 'firebase/auth'
-import { FirebaseConfig } from 'components/FirebaseConfig'
+import { FirebaseConfig } from 'lib/FirebaseConfig'
+
+import { usePage } from 'utils/context/PageContext'
 
 type AuthContextType = {
   currentUser: User | null,
+  login?: () => void,
+  logout?: () => void
 }
 
-const app = initializeApp(FirebaseConfig)
-const auth = getAuth(app)
+export const app = initializeApp(FirebaseConfig)
+export const auth = getAuth(app)
+export const provider = new GoogleAuthProvider
 
 const AuthContext = createContext<AuthContextType>({currentUser: auth.currentUser})
 export const useAuth = () => {
-    return useContext(AuthContext)
+  return useContext(AuthContext)
 }
 
 type Props = {
-    children: ReactNode
+  children: ReactNode
 }
 export const AuthProvider = ({ children }: Props) => {
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
   
+  const login = () => {
+    signInWithRedirect(auth, provider).then(() => {
+    }).catch(e => {console.log(e)})
+  }
+
+  const logout = () => {
+    auth.signOut().then(() => {
+    }).catch(e => {console.log(e)})
+  }
+
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       setCurrentUser(user)
@@ -40,6 +57,8 @@ export const AuthProvider = ({ children }: Props) => {
   
   const values: AuthContextType = {
     currentUser,
+    login,
+    logout
   }
   
   return (

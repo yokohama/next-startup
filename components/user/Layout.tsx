@@ -1,31 +1,31 @@
-import { Header } from './Header'
-import { Footer } from '../Footer'
-import { usePage } from '../PageContext'
-import { AuthProvider } from 'components/user/AuthContext'
+import { Footer } from 'components/Footer'
+import { usePage } from 'utils/context/PageContext'
+import { PageComponents } from 'components/Layout'
 
-import { Index } from 'components/user/Index'
+import { Header } from 'components/user/Header'
 import { SignIn } from 'components/user/SignIn'
-import { About } from 'components/About'
 import { Dashboard } from 'components/user/Dashboard'
 import { Profile } from 'components/user/Profile'
+import React, { FC } from 'react'
 
-const PageComponents: { [key: string]: JSX.Element } = {
-  about: <About />,
+const UserPageComponents: { [key: string]: JSX.Element } = {
+  ...PageComponents,
   signIn: <SignIn />,
-  index: <Index />,
   dashboard: <Dashboard />,
   profile: <Profile />
 }
 
-export const Layout = () => {
+type Props = {
+  children: React.ReactNode
+}
+
+export const Layout: FC<Props> = ({children}: Props) => {
   const { page } = usePage()
   return (
-    <AuthProvider>
-      <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-        <Header />
-        <div>{ PageComponents[page] }</div>
-        <Footer />
-      </main>
-    </AuthProvider>
+    <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
+      <Header />
+      <div>{ UserPageComponents[page] }</div>
+      <Footer />
+    </main>
   )
 }

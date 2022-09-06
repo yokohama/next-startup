@@ -1,4 +1,4 @@
-import { useAuth } from 'components/user/AuthContext'
+import { useAuth } from 'utils/context/user/AuthContext'
 
 export const Profile = () => {
   const { currentUser } = useAuth()
