@@ -38,14 +38,18 @@ type Props = {
 }
 export const AuthProvider = ({ children }: Props) => {
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
+  const { setPage } = usePage()
   
   const login = () => {
+    setPage('dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => {console.log(e)})
   }
 
   const logout = () => {
     auth.signOut().then(() => {
+      console.log('hoge')
+      setPage('index')
     }).catch(e => {console.log(e)})
   }
 

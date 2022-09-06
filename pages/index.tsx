@@ -6,13 +6,13 @@ import { AuthProvider } from 'utils/context/user/AuthContext'
 
 const Home: NextPage = () => {
   return (
-    <AuthProvider>
-      <PageProvider>
+    <PageProvider>
+      <AuthProvider>
         <Layout>
           <div>index</div>
         </Layout>
-      </PageProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </PageProvider>
   )
 }
 

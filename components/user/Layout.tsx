@@ -21,6 +21,7 @@ type Props = {
 
 export const Layout: FC<Props> = ({children}: Props) => {
   const { page } = usePage()
+
   return (
     <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
       <Header />
