@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { Footer } from 'components/Footer'
-import { Header } from 'components/user/Header'
+import { Header } from 'components/Header'
 
 type Props = {
   children: React.ReactNode

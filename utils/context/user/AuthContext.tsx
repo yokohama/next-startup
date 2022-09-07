@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }: Props) => {
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
   
   const login = () => {
+    router.push('/user/dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => {console.log(e)})
   }
@@ -48,6 +49,7 @@ export const AuthProvider = ({ children }: Props) => {
   const logout = () => {
     auth.signOut().then(() => {
       router.push('/')
+      
     }).catch(e => {console.log(e)})
   }
 
@@ -57,8 +59,14 @@ export const AuthProvider = ({ children }: Props) => {
     })
   }, [])
   
+  const values: AuthContextType = {
+    currentUser,
+    login,
+    logout
+  }
+  
   return (
-    <AuthContext.Provider value={{currentUser, login, logout}}>
+    <AuthContext.Provider value={values}>
       {children}
     </AuthContext.Provider>
   )

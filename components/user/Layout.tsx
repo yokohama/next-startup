@@ -2,9 +2,10 @@ import React, { FC } from 'react'
 
 import { useAuth } from 'utils/context/user/AuthContext'
 
-import { ShowWithLogin } from 'components/Display'
+import { ShowWithLogin, ShowWithNoLogin } from 'components/Display'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/user/Header'
+import { GetStart } from 'components/user/GetStart'
 
 type Props = {
   children: React.ReactNode
@@ -19,6 +20,9 @@ export const Layout: FC<Props> = ({children}: Props) => {
       <ShowWithLogin required={currentUser}>
         { children }
       </ShowWithLogin>
+      <ShowWithNoLogin required={currentUser}>
+        <GetStart />
+      </ShowWithNoLogin>
       <Footer />
     </main>
   )
