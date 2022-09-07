@@ -3,7 +3,7 @@ import { createContext, Dispatch, ReactNode,
 
 type PageContextType = {
     page: string
-    setPage?: any
+    setPage?: (v: string) => void
 }
 
 const PageContext = createContext<PageContextType>({page: ''})
@@ -19,13 +19,11 @@ export const PageProvider = ({ children }: Props) => {
   const [page, setHoge] = useState<string>('')
   
   useEffect(() => {
-    console.log('moge')
     setHoge(localStorage.getItem('page') || 'index')
   }, [setHoge])
   
   // useCallbac調べる
   const setPage = useCallback((v: string) => {
-    console.log('hoge')
     setHoge(v)
     localStorage.setItem('page', v)
   }, [setHoge])
