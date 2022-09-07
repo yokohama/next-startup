@@ -5,8 +5,9 @@ import {
   useState, 
   useEffect
 } from 'react'
+import { useRouter } from 'next/router'
 
-import { initializeApp, FirebaseApp } from 'firebase/app'
+import { initializeApp } from 'firebase/app'
 import {
   User,
   getAuth,
@@ -14,9 +15,7 @@ import {
   signInWithRedirect,
   onAuthStateChanged,
 } from 'firebase/auth'
-import { FirebaseConfig } from 'lib/FirebaseConfig'
-
-import { usePage } from 'utils/context/PageContext'
+import { FirebaseConfig } from 'lib/Firebase'
 
 type AuthContextType = {
   currentUser: User | null,
@@ -37,19 +36,18 @@ type Props = {
   children: ReactNode
 }
 export const AuthProvider = ({ children }: Props) => {
+  const router = useRouter()
+
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
-  const { setPage } = usePage()
   
   const login = () => {
-    setPage('dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => {console.log(e)})
   }
 
   const logout = () => {
     auth.signOut().then(() => {
-      console.log('hoge')
-      setPage('index')
+      router.push('/')
     }).catch(e => {console.log(e)})
   }
 
@@ -59,14 +57,8 @@ export const AuthProvider = ({ children }: Props) => {
     })
   }, [])
   
-  const values: AuthContextType = {
-    currentUser,
-    login,
-    logout
-  }
-  
   return (
-    <AuthContext.Provider value={values}>
+    <AuthContext.Provider value={{currentUser, login, logout}}>
       {children}
     </AuthContext.Provider>
   )

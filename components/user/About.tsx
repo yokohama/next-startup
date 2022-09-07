@@ -11,7 +11,7 @@ export const About = () => {
           </span>
         </h2>
         <div className="lg:mt-0 lg:flex-shrink-0">
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </div>
       </div>
     </div>

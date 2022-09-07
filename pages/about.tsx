@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 
 import { Layout } from 'components/Layout'
-import { Index } from 'components/user/Index'
+import { About } from 'components/user/About'
+import { AuthProvider } from 'utils/context/user/AuthContext'
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Index />
+      <About />
     </Layout>
   )
 }
