@@ -4,10 +4,11 @@ import Link from 'next/link'
 import { useAuth } from 'utils/context/user/AuthContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display' 
+import { UserLoginButton, UserLogoutButton } from 'components/button/UserLoginButton'
 import { ActiveLink } from 'components/link/ActiveLink'
 
 export const Header = () => {
-  const { currentUser, login, logout } = useAuth()
+  const { currentUser } = useAuth()
   const path = useRouter().pathname
 
   return (
@@ -22,29 +23,14 @@ export const Header = () => {
           <div className="flex items-center">
             <nav className="font-sen text-gray-800 dark:text-white uppercase text-lg lg:flex items-center hidden">
               <ShowWithLogin required={currentUser}>
-                <ActiveLink path='/user/dashboard'>
-                  Dashboard
-                </ActiveLink>
-                <ActiveLink path='/user/profile'>
-                  Profile
-                </ActiveLink>
+                <ActiveLink path='/user/dashboard'>Dashboard</ActiveLink>
+                <ActiveLink path='/user/profile'>Profile</ActiveLink>
               </ShowWithLogin>
               <ShowWithNoLogin required={currentUser}>
-                <a href="#"
-                  onClick={login}
-                  className="py-1 px-4 mr-2 transition rounded-lg hover:bg-indigo-700 hover:text-white border-solid border-2 border-indigo-700"
-                >ログイン</a>
-                {/*
-                <a href="#"
-                  className="py-2 px-4 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                >新規登録</a>
-                */}
+                <UserLoginButton>ログイン</UserLoginButton>
               </ShowWithNoLogin>
               <ShowWithLogin required={currentUser}>
-                <a href="#"
-                  className="py-1 px-4 mr-2 transition rounded-lg hover:bg-indigo-700 hover:text-white border-solid border-2 border-indigo-700"
-                  onClick={logout}
-                >ログアウト</a>
+                <UserLogoutButton>ログアウト</UserLogoutButton>
               </ShowWithLogin>
             </nav>
             { /* TODO: ここにススマフォサイズ実装 */}

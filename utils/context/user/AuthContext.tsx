@@ -18,9 +18,7 @@ import {
 import { FirebaseConfig } from 'lib/Firebase'
 
 type AuthContextType = {
-  currentUser: User | null,
-  login?: () => void,
-  logout?: () => void
+  currentUser: User | null
 }
 
 export const app = initializeApp(FirebaseConfig)
@@ -40,19 +38,6 @@ export const AuthProvider = ({ children }: Props) => {
 
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
   
-  const login = () => {
-    router.push('/user/dashboard')
-    signInWithRedirect(auth, provider).then(() => {
-    }).catch(e => {console.log(e)})
-  }
-
-  const logout = () => {
-    auth.signOut().then(() => {
-      router.push('/')
-      
-    }).catch(e => {console.log(e)})
-  }
-
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       setCurrentUser(user)
@@ -61,8 +46,6 @@ export const AuthProvider = ({ children }: Props) => {
   
   const values: AuthContextType = {
     currentUser,
-    login,
-    logout
   }
   
   return (
