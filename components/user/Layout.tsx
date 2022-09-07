@@ -1,31 +1,29 @@
-import { Header } from './Header'
-import { Footer } from '../Footer'
-import { usePage } from '../PageContext'
-import { AuthProvider } from 'components/user/AuthContext'
+import React, { FC } from 'react'
 
-import { Index } from 'components/user/Index'
-import { SignIn } from 'components/user/SignIn'
-import { About } from 'components/About'
-import { Dashboard } from 'components/user/Dashboard'
-import { Profile } from 'components/user/Profile'
+import { useAuth } from 'utils/context/user/AuthContext'
 
-const PageComponents: { [key: string]: JSX.Element } = {
-  about: <About />,
-  signIn: <SignIn />,
-  index: <Index />,
-  dashboard: <Dashboard />,
-  profile: <Profile />
+import { ShowWithLogin, ShowWithNoLogin } from 'components/Display'
+import { Footer } from 'components/Footer'
+import { Header } from 'components/user/Header'
+import { GetStart } from 'components/user/GetStart'
+
+type Props = {
+  children: React.ReactNode
 }
 
-export const Layout = () => {
-  const { page } = usePage()
+export const Layout: FC<Props> = ({children}: Props) => {
+  const { currentUser } = useAuth()
+
   return (
-    <AuthProvider>
-      <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-        <Header />
-        <div>{ PageComponents[page] }</div>
-        <Footer />
-      </main>
-    </AuthProvider>
+    <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
+      <Header />
+      <ShowWithLogin required={currentUser}>
+        { children }
+      </ShowWithLogin>
+      <ShowWithNoLogin required={currentUser}>
+        <GetStart />
+      </ShowWithNoLogin>
+      <Footer />
+    </main>
   )
 }
