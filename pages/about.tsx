@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 
 import { Layout } from 'components/Layout'
-import { About } from 'components/user/About'
-import { AuthProvider } from 'utils/context/user/AuthContext'
+import { About } from 'components/About'
 
 const Home: NextPage = () => {
   return (

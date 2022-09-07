@@ -12,7 +12,7 @@ export const MenuItem: React.FC<Props> = ({menuKey, handleOnClick, isActive}: Pr
   const label = MenuMap[menuKey].label
   const icon = MenuMap[menuKey].icon
   
-  const menuClassName = isActive ?
+  const className = isActive ?
     'w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 \
       justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500 \
       border-r-4 border-blue-500'
@@ -24,7 +24,7 @@ export const MenuItem: React.FC<Props> = ({menuKey, handleOnClick, isActive}: Pr
     // アクティブ <a class="w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500 dark:from-gray-700 dark:to-gray-800 border-r-4 border-blue-500" href="#">
     <a href='#'
       onClick={() => handleOnClick(menuKey)}
-      className={menuClassName} >
+      className={className} >
       <span className="text-left">
         <svg width="20" 
           height="20" 
