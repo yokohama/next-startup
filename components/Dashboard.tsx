@@ -1,4 +1,4 @@
-import { Menu, MenuKeyType, MenuMap } from 'components/user/dashboard/Menu'
+import { Menu, MenuKeyType, MenuMap } from 'components/dashboard/Menu'
 import { useState } from 'react'
 
 export const Dashboard = () => {

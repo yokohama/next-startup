@@ -4,7 +4,7 @@ import { Layout } from 'components/Layout'
 import { AuthProvider } from 'hook/AuthContext'
 import { LoadingProvider } from 'hook/LoadingContext'
 
-import { Index } from 'components/Index'
+import { GetStart } from 'components/GetStart'
 import Head from 'next/head'
 
 const Home: NextPage = () => {
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     <AuthProvider>
       <LoadingProvider>
         <Layout>
-          <Index />
+          <GetStart />
         </Layout>
       </LoadingProvider>
     </AuthProvider>

@@ -1,28 +1,14 @@
+import { FooterLink } from 'components/link/FooterLink'
+
 export const Footer = () => {
   return (
     <footer className="bg-indigo-700 w-full py-8">
       <div className="max-w-screen-xl mx-auto px-4">
         <ul className="max-w-screen-md mx-auto text-lg font-light flex flex-wrap justify-between">
-          <li className="my-2">
-            <a className="text-white hover:text-gray-300 transition-colors duration-200" href="#">
-              FAQ
-            </a>
-          </li>
-          <li className="my-2">
-            <a className="text-white hover:text-gray-300 transition-colors duration-200" href="#">
-              Terms
-            </a>
-          </li>
-          <li className="my-2">
-            <a className="text-white hover:text-gray-300 transition-colors duration-200" href="#">
-              Privacy Policy
-            </a>
-          </li>
-          <li className="my-2">
-            <a className="text-white hover:text-gray-300 transition-colors duration-200" href="#">
-              Company
-            </a>
-          </li>
+          <FooterLink href='/faq'>FAQ</FooterLink>
+          <FooterLink href='/terms'>Terms</FooterLink>
+          <FooterLink href='/privacy_policy'>Privay Policy</FooterLink>
+          <FooterLink href='#'>Company</FooterLink>
         </ul>
         <div className="pt-8 flex max-w-xs mx-auto items-center justify-between">
           <a href="#" className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
@@ -49,6 +35,5 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
-
   )
 }

@@ -1,9 +1,12 @@
+import { useEffect } from 'react'
+
 import { 
   ReactNode, 
   createContext, 
   useContext, 
   useState, 
-  useEffect
+  Dispatch,
+  SetStateAction
 } from 'react'
 import { useRouter } from 'next/router'
 
@@ -12,13 +15,13 @@ import {
   User,
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect,
-  onAuthStateChanged,
+  onAuthStateChanged
 } from 'firebase/auth'
 import { FirebaseConfig } from 'lib/Firebase'
 
 type AuthContextType = {
   currentUser: User | null
+  setCurrentUser?: Dispatch<SetStateAction<User | null>>
 }
 
 export const app = initializeApp(FirebaseConfig)
@@ -35,6 +38,7 @@ type Props = {
 }
 export const AuthProvider = ({ children }: Props) => {
   const router = useRouter()
+  const pathname = router.pathname
 
   const [currentUser, setCurrentUser] = useState(auth.currentUser)
   
@@ -42,15 +46,30 @@ export const AuthProvider = ({ children }: Props) => {
     return onAuthStateChanged(auth, (user) => {
       setCurrentUser(user)
     })
-  }, [])
+  }, [auth.currentUser])
+  
+  const PublicPathname: string[] = [
+    '/',
+    '/about',
+    '/faq',
+    '/terms',
+    '/privacy_policy',
+    '/get_start',
+  ]
+  
+  const LoggedInPathname: string[] = [
+    '/dashboard'
+  ]
   
   const values: AuthContextType = {
     currentUser,
+    setCurrentUser
   }
   
   return (
     <AuthContext.Provider value={values}>
-      {children}
+      { PublicPathname.includes(pathname) && children }
+      { LoggedInPathname.includes(pathname) && currentUser && children }
     </AuthContext.Provider>
   )
 }
