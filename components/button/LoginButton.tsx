@@ -6,8 +6,6 @@ import { getAuth, GoogleAuthProvider, signInWithRedirect } from 'firebase/auth'
 
 import { FirebaseConfig } from 'lib/Firebase'
 
-import { useLoading } from 'hook/LoadingContext'
-
 const app = initializeApp(FirebaseConfig)
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider
@@ -18,13 +16,10 @@ type Props = {
 
 export const UserLoginButton: React.FC<Props> = ({children}: Props): ReactElement => {
   const router = useRouter()
-  const { setIsLoading } = useLoading()
 
   const handleOnLogin = () => {
-    router.push('/user/dashboard')
-    setIsLoading(true)
+    router.push('/hoge')
     signInWithRedirect(auth, provider).then(() => {
-      setIsLoading(false)
     }).catch(e => { console.error(e)} )
   }
 
@@ -42,13 +37,10 @@ export const UserLoginButton: React.FC<Props> = ({children}: Props): ReactElemen
 
 export const UserGoogleLoginButton: React.FC = (): ReactElement => {
   const router = useRouter()
-  const { setIsLoading } = useLoading()
 
   const handleOnLogin = () => {
-    router.push('/user/dashboard')
-    setIsLoading(true)
+    router.push('/hoge')
     signInWithRedirect(auth, provider).then(() => {
-      setIsLoading(false)
     }).catch(e => { console.error(e)} )
   }
 
@@ -77,11 +69,8 @@ export const UserGoogleLoginButton: React.FC = (): ReactElement => {
 }
 
 export const UserLogoutButton: React.FC<Props> = ({children}: Props): ReactElement => {
-  const router = useRouter()
-
   const handleOnLogout = () => {
     auth.signOut().then(() => {
-      router.push('/')
     }).catch(e => { console.error(e)} )
   }
 

@@ -1,10 +1,10 @@
 import { ReactElement } from "react"
 
-import { MenuItem } from 'components/user/dashboard/MenuItem'
-import { Dashboard } from 'components/user/dashboard/Dashboard'
-import { Projects } from 'components/user/dashboard/Projects'
-import { MyTasks } from 'components/user/dashboard/MyTasks'
-import { Settings } from 'components/user/dashboard/Settings'
+import { MenuItem } from 'components/dashboard/MenuItem'
+import { Dashboard } from 'components/dashboard/Dashboard'
+import { Projects } from 'components/dashboard/Projects'
+import { MyTasks } from 'components/dashboard/MyTasks'
+import { Settings } from 'components/dashboard/Settings'
 
 export type MenuKeyType = 'dashboard' | 'projects' | 'myTasks' | 'settings'
 type MenuValueType = {

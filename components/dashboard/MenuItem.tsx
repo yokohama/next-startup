@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
 
-import { MenuKeyType, MenuMap } from 'components/user/dashboard/Menu'
+import { MenuKeyType, MenuMap } from 'components/dashboard/Menu'
 
 type Props = {
   menuKey: MenuKeyType

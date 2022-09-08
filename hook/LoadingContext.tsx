@@ -26,7 +26,7 @@ export const LoadingProvider: React.FC<Props> = ({children}: Props) => {
 
   return(
     <LoadingContext.Provider value={{isLoading, setIsLoading}}>
-      {children}
+      {!isLoading && children}
     </LoadingContext.Provider>
   )
 }

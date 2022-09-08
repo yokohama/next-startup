@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: Props) => {
     return onAuthStateChanged(auth, (user) => {
       setCurrentUser(user)
     })
-  }, [])
+  }, [auth.currentUser])
   
   const values: AuthContextType = {
     currentUser,

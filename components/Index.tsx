@@ -12,7 +12,7 @@ export const Index = () => {
             毎度同じもの作るの面面倒なの、基本的に必要なるものをいれておきます。
           </h2>
           <div className='flex items-center justify-center mt-4'>
-            <Link href='/user/dashboard'>
+            <Link href='/get_start'>
               <a className='uppercase py-2 px-4 bg-gray-800 border-2 border-transparent text-white text-md mr-4 hover:bg-gray-900'>Get started</a>
             </Link>
             <a href='https://github.com/yokohama/next-startup' 

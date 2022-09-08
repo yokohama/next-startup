@@ -1,7 +1,7 @@
-import { ExamA } from 'components/user/dashboard/ExamA'
-import { ExamB } from 'components/user/dashboard/ExamB'
-import { ExamC } from 'components/user/dashboard/ExamC'
-import { ExamD } from 'components/user/dashboard/ExamD'
+import { ExamA } from 'components/dashboard/ExamA'
+import { ExamB } from 'components/dashboard/ExamB'
+import { ExamC } from 'components/dashboard/ExamC'
+import { ExamD } from 'components/dashboard/ExamD'
 
 type Props = {}
 
