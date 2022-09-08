@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
 
-import { useAuth } from 'utils/context/user/AuthContext'
+import { useAuth } from 'hook/UserAuthContext'
+import { useLoading } from 'hook/LoadingContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/user/Header'
+import { Index } from 'components/user/Index'
 import { GetStart } from 'components/user/GetStart'
 
 type Props = {
@@ -13,9 +15,11 @@ type Props = {
 
 export const Layout: FC<Props> = ({children}: Props) => {
   const { currentUser } = useAuth()
+  const { isLoading } = useLoading()
 
   return (
     <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
+      {`isLoading = ${isLoading}`}
       <Header />
       <ShowWithLogin required={currentUser}>
         { children }

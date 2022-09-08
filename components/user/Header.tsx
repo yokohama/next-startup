@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
-import { useAuth } from 'utils/context/user/AuthContext'
+import { useAuth } from 'hook/UserAuthContext'
+import { useLoading } from 'hook/LoadingContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display' 
 import { UserLoginButton, UserLogoutButton } from 'components/button/UserLoginButton'

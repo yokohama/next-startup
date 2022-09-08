@@ -2,14 +2,17 @@ import type { NextPage } from 'next'
 
 import { Layout } from 'components/user/Layout'
 import { Dashboard } from 'components/user/Dashboard'
-import { AuthProvider } from 'utils/context/user/AuthContext'
+import { AuthProvider } from 'hook/UserAuthContext'
+import { LoadingProvider } from 'hook/LoadingContext'
 
 const Home: NextPage = () => {
   return (
     <AuthProvider>
-      <Layout>
-        <Dashboard />
-      </Layout>
+      <LoadingProvider>
+        <Layout>
+          <Dashboard />
+        </Layout>
+      </LoadingProvider>
     </AuthProvider>
   )
 }

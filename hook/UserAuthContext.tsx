@@ -12,7 +12,6 @@ import {
   User,
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect,
   onAuthStateChanged,
 } from 'firebase/auth'
 import { FirebaseConfig } from 'lib/Firebase'
