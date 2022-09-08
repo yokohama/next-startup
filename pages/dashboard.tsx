@@ -4,14 +4,14 @@ import { AuthProvider } from 'hook/AuthContext'
 import { LoadingProvider } from 'hook/LoadingContext'
 
 import { Layout } from 'components/Layout'
-import { About } from 'components/About'
+import { Dashboard } from 'components/Dashboard'
 
 const Home: NextPage = () => {
   return (
     <AuthProvider>
       <LoadingProvider>
         <Layout>
-          <About />
+          <Dashboard />
         </Layout>
       </LoadingProvider>
     </AuthProvider>

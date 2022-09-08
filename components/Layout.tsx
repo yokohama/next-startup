@@ -18,20 +18,8 @@ export const Layout: FC<Props> = ({children}: Props) => {
 
   return (
     <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-      {`isLoading = ${isLoading}`}
       <Header />
-      <ShowWithLogin required={currentUser}>
-        <Dashboard />
-      </ShowWithLogin>
-      <ShowWithNoLogin required={currentUser}>
-        {children}
-      </ShowWithNoLogin>
-      {/*
-        //children ? children :
-          <ShowWithLogin required={currentUser}>
-            <Dashboard />
-          </ShowWithLogin>
-    */}
+      {children}
       <Footer />
     </main>
   )

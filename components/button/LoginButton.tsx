@@ -10,15 +10,11 @@ const app = initializeApp(FirebaseConfig)
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider
 
-type Props = {
-  children: string
-}
-
-export const UserLoginButton: React.FC<Props> = ({children}: Props): ReactElement => {
+export const UserLoginButton: React.FC = (): ReactElement => {
   const router = useRouter()
 
   const handleOnLogin = () => {
-    router.push('/hoge')
+    router.push('/dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => { console.error(e)} )
   }
@@ -39,7 +35,7 @@ export const UserGoogleLoginButton: React.FC = (): ReactElement => {
   const router = useRouter()
 
   const handleOnLogin = () => {
-    router.push('/hoge')
+    router.push('/dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => { console.error(e)} )
   }
@@ -68,9 +64,12 @@ export const UserGoogleLoginButton: React.FC = (): ReactElement => {
   )
 }
 
-export const UserLogoutButton: React.FC<Props> = ({children}: Props): ReactElement => {
+export const UserLogoutButton: React.FC = (): ReactElement => {
+  const router = useRouter()
+
   const handleOnLogout = () => {
     auth.signOut().then(() => {
+      router.push('/')
     }).catch(e => { console.error(e)} )
   }
 
