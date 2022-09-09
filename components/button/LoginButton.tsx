@@ -10,7 +10,7 @@ const app = initializeApp(FirebaseConfig)
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider
 
-export const UserLoginButton: React.FC = (): ReactElement => {
+export const UserLoginButton = (): ReactElement => {
   const router = useRouter()
 
   const handleOnLogin = () => {
@@ -31,7 +31,7 @@ export const UserLoginButton: React.FC = (): ReactElement => {
   )
 }
 
-export const UserGoogleLoginButton: React.FC = (): ReactElement => {
+export const UserGoogleLoginButton = (): ReactElement => {
   const router = useRouter()
 
   const handleOnLogin = () => {
@@ -64,7 +64,7 @@ export const UserGoogleLoginButton: React.FC = (): ReactElement => {
   )
 }
 
-export const UserLogoutButton: React.FC = (): ReactElement => {
+export const UserLogoutButton = (): ReactElement => {
   const router = useRouter()
 
   const handleOnLogout = () => {

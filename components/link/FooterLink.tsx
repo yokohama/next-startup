@@ -5,7 +5,7 @@ type Props = {
   children: ReactElement | string
 }
 
-export const FooterLink: React.FC<Props> = ({ href, children }: Props) => {
+export const FooterLink = ({ href, children }: Props) => {
   return(
     <li className="my-2">
       <a className="text-white hover:text-gray-300 transition-colors duration-200" href={href}>
