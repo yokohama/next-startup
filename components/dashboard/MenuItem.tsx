@@ -8,7 +8,6 @@ type Props = {
   component: ReactElement
   setComponent: Dispatch<SetStateAction<ReactElement>>
   isActive: boolean
-  handleOnClick: Dispatch<SetStateAction<MenuKeyType>>
   label: string
   icon: string
 }

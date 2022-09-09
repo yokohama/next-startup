@@ -17,7 +17,7 @@ export const DashboardLayout = (): ReactElement => {
     <main className="bg-gray-100 rounded-2xl h-screen overflow-hidden relative">
       {alertList}
       <div className="flex items-start justify-between">
-        <Menu menu={menuKey} setMenuKey={setMenuKey} setComponent={setComponent} alertList={alertList} setAlertList={setAlertList} />
+        <Menu menuKey={menuKey} setMenuKey={setMenuKey} setComponent={setComponent} alertList={alertList} setAlertList={setAlertList} />
         <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
           {component}
         </div>

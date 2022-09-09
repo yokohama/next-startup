@@ -8,19 +8,20 @@ import { Settings } from 'components/dashboard/Settings'
 
 export type MenuKeyType = 'dashboard' | 'projects' | 'myTasks' | 'settings'
 type Props = {
+  menuKey: MenuKeyType
   setMenuKey: Dispatch<SetStateAction<MenuKeyType>>
   setComponent: Dispatch<SetStateAction<ReactElement>>
   alertList: ReactElement[]
   setAlertList: Dispatch<SetStateAction<JSX.Element[]>>
 }
 
-export const Menu = ({setMenuKey, setComponent, alertList, setAlertList}: Props) => {
+export const Menu = ({menuKey, setMenuKey, setComponent, alertList, setAlertList}: Props) => {
   type MenuValueType = {
     label: string
     icon: string
     component: ReactElement
   }
-
+  
   // @see http://www.w3.org/2000/svg
   const MenuMap: {[key in MenuKeyType]: MenuValueType} = {
     dashboard: {
@@ -46,15 +47,15 @@ export const Menu = ({setMenuKey, setComponent, alertList, setAlertList}: Props)
   }
 
   const memuItems = []
-  for (let menuKey in MenuMap) {
-    const menu = MenuMap[menuKey]
+  for (let key in MenuMap) {
+    const menu = MenuMap[key as MenuKeyType]
     memuItems.push(
-      <MenuItem key={menuKey} 
-        menuKey={menuKey} 
+      <MenuItem key={key} 
+        menuKey={key as MenuKeyType} 
         setMenuKey={setMenuKey} 
         component={menu.component} 
         setComponent={setComponent} 
-        isActive={menuKey === menu} 
+        isActive={menuKey === key} 
         label={menu.label}
         icon={menu.icon}
      />

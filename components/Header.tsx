@@ -4,6 +4,7 @@ import { useAuth } from 'hook/AuthContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display' 
 import { SessionButton } from 'components/button/SessionButton'
+import { ActiveLink } from './link/ActiveLink'
 
 export const Header = () => {
   const { currentUser } = useAuth()
@@ -23,6 +24,7 @@ export const Header = () => {
                 <SessionButton sessionButtonKey='login' />
               </ShowWithNoLogin>
               <ShowWithLogin required={currentUser}>
+                <ActiveLink href='/dashboard'>Dashboard</ActiveLink>
                 <SessionButton sessionButtonKey='logout' />
               </ShowWithLogin>
             </nav>
