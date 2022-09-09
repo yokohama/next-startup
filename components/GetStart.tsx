@@ -1,4 +1,4 @@
-import { UserGoogleLoginButton } from 'components/button/LoginButton'
+import { SessionButton } from 'components/button/SessionButton'
 
 export const GetStart = () => {
   return (
@@ -10,7 +10,7 @@ export const GetStart = () => {
           </span>
         </h2>
         <div className='mt-12'>
-          <UserGoogleLoginButton />
+          <SessionButton sessionButtonKey='googleLogin' />
         </div>
       </div>
     </div>

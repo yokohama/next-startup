@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useAuth } from 'hook/AuthContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display' 
-import { UserLoginButton, UserLogoutButton } from 'components/button/LoginButton'
+import { SessionButton } from 'components/button/SessionButton'
 
 export const Header = () => {
   const { currentUser } = useAuth()
@@ -20,10 +20,10 @@ export const Header = () => {
           <div className='flex items-center'>
             <nav className='font-sen text-gray-800 uppercase text-lg lg:flex items-center hidden'>
               <ShowWithNoLogin required={currentUser}>
-                <UserLoginButton />
+                <SessionButton sessionButtonKey='login' />
               </ShowWithNoLogin>
               <ShowWithLogin required={currentUser}>
-                <UserLogoutButton />
+                <SessionButton sessionButtonKey='logout' />
               </ShowWithLogin>
             </nav>
             { /* TODO: ここにススマフォサイズ実装 */}
