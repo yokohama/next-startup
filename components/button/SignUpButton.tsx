@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const SignUpButton = (): ReactElement => {
   return (
-    <Link href=''>
+    <Link href='/signup'>
       <button type='button'
         className='text-white bg-[#4285F4] hover:bg-[#4285F4]/90 \
         focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 \
