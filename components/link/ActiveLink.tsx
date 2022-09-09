@@ -1,4 +1,5 @@
 import { ReactElement } from "react"
+
 import Link from 'next/link'
 import { useRouter } from "next/router"
 
@@ -6,8 +7,7 @@ type Props = {
   children: string
   path: string
 }
-
-export const ActiveLink: React.FC<Props> = ({ children, path }: Props): ReactElement => {
+export const ActiveLink = ({ children, path }: Props): ReactElement => {
   const router = useRouter()
   const currentPath = router.pathname
 

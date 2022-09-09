@@ -41,7 +41,7 @@ type Props = {
   menu: MenuKeyType
   handleOnClick: any
 }
-export const Menu: React.FC<Props> = ({menu, handleOnClick}: Props) => {
+export const Menu = ({menu, handleOnClick}: Props) => {
   const memuElements = []
   for (let key in MenuMap) {
     memuElements.push(

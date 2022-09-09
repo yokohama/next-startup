@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, ReactElement, SetStateAction } from "react"
 
 import { MenuKeyType, MenuMap } from 'components/dashboard/Menu'
 
@@ -8,7 +8,7 @@ type Props = {
   handleOnClick: Dispatch<SetStateAction<MenuKeyType>>
 }
 
-export const MenuItem: React.FC<Props> = ({menuKey, handleOnClick, isActive}: Props) => {
+export const MenuItem = ({menuKey, handleOnClick, isActive}: Props): ReactElement => {
   const label = MenuMap[menuKey].label
   const icon = MenuMap[menuKey].icon
   

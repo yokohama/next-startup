@@ -20,10 +20,10 @@ export const Header = () => {
           <div className='flex items-center'>
             <nav className='font-sen text-gray-800 uppercase text-lg lg:flex items-center hidden'>
               <ShowWithNoLogin required={currentUser}>
-                <UserLoginButton>ログイン</UserLoginButton>
+                <UserLoginButton />
               </ShowWithNoLogin>
               <ShowWithLogin required={currentUser}>
-                <UserLogoutButton>ログアウト</UserLogoutButton>
+                <UserLogoutButton />
               </ShowWithLogin>
             </nav>
             { /* TODO: ここにススマフォサイズ実装 */}

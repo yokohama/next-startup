@@ -1,4 +1,4 @@
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import { User } from 'firebase/auth'
 
 type Props = {
@@ -6,10 +6,10 @@ type Props = {
   children?: ReactNode
 }
 
-export const ShowWithLogin: FC<Props> = ({ children, required }) => {
+export const ShowWithLogin = ({ children, required }: Props) => {
   return required ? <>{children}</> : <></>
 }
 
-export const ShowWithNoLogin: FC<Props> = ({ children, required }) => {
+export const ShowWithNoLogin = ({ children, required }: Props) => {
   return !required ? <>{children}</> : <></>
 }
