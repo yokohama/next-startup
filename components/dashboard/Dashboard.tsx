@@ -2,9 +2,9 @@ import { ExamA } from 'components/dashboard/ExamA'
 import { ExamB } from 'components/dashboard/ExamB'
 import { ExamC } from 'components/dashboard/ExamC'
 import { ExamD } from 'components/dashboard/ExamD'
-import { ReactElement } from 'react'
+import { DashboardProps } from 'components/DashboardLayout'
 
-export const Dashboard = ({}): ReactElement => {
+export const Dashboard = ({}: DashboardProps) => {
   return (
     <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
       <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">

@@ -16,7 +16,8 @@ const provider = new GoogleAuthProvider
 
 type sessionButtonKeyType = 'login' | 'logout' | 'googleLogin'
 
-export const SessionButton = ({sessionButtonKey}: {sessionButtonKey: sessionButtonKeyType}): ReactElement => {
+export const SessionButton = ({sessionButtonKey}: 
+  {sessionButtonKey: sessionButtonKeyType}): ReactElement => {
 
   const router = useRouter()
 
