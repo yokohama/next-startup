@@ -1,0 +1,15 @@
+name: Test
+  on:
+    pull_request:
+      types:
+        - opened
+        - synchronize
+  jobs:
+    merge:
+      steps:
+        - name: Running Page Speed Insights
+          uses: jakepartusch/psi-action@v1.2
+          with:
+            url: 'https://next-startup-gilt.vercel.app/'
+            threshold: 70
+            strategy: mobile
