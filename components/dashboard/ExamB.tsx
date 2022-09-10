@@ -78,18 +78,26 @@ export const ExamB = () => {
         <div className="flex -space-x-2">
           <a href="#" className="">
             <Image src='/images/profile.jpg' alt='profile' 
+              width='40'
+              height='40'
               className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
             <Image src='/images/profile.jpg' alt='profile' 
+              width='40'
+              height='40'
               className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
             <Image src='/images/profile.jpg' alt='profile' 
+              width='40'
+              height='40'
               className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
             <Image src='/images/profile.jpg' alt='profile' 
+              width='40'
+              height='40'
               className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
         </div>
