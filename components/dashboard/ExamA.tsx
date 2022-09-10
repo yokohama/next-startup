@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export const ExamA = () => {
   return (
     <div className="mb-4">
@@ -73,16 +75,20 @@ export const ExamA = () => {
         </div>
         <div className="flex -space-x-2">
           <a href="#" className="">
-            <img className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white" src="/images/profile.jpg" alt="Guy" />
+            <Image src='/images/profile.jpg' alt='profile' 
+              className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
-            <img className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white" src="/images/profile.jpg" alt="Max" />
+            <Image src='/images/profile.jpg' alt='profile' 
+              className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
-            <img className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white" src="/images/profile.jpg" alt="Charles" />
+            <Image src='/images/profile.jpg' alt='profile' 
+              className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
           <a href="#" className="">
-            <img className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white" src="/images/profile.jpg" alt="Jade" />
+            <Image src='/images/profile.jpg' alt='profile' 
+              className='inline-block h-10 w-10 rounded-full object-cover ring-2 ring-white' />
           </a>
         </div>
         <span className="px-2 py-1 flex w-36 mt-4 items-center text-xs rounded-md font-semibold text-yellow-500 bg-yellow-100">

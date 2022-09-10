@@ -12,7 +12,6 @@ export const GoogleLoginButton = ({handleOnClick}:
         inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2'>
       <svg className='mr-2 -ml-1 w-4 h-4' 
         aria-hidden='true' 
-        focusable='false' 
         data-prefix='fab' 
         data-icon='google' 
         role='img' 

@@ -38,7 +38,7 @@ export const SignUp = () => {
       router.push('/dashboard')
     }).catch(e => {
       console.log(e)
-      setAlertList([...alertList, <Alert message={e.code} />])
+      setAlertList([...alertList, <Alert key={alertList.length+1} message={e.code} />])
     })
   }
   
