@@ -5,8 +5,9 @@ on:
       - main
       - development
 jobs:
-  steps:
-    - name: Running Page Speed Insights
+ Running_Page_Speed_Insights:
+    steps:
+      - name Running Page Speed Insights
       uses: jakepartusch/psi-action@v1.2
       with:
         url: 'https://next-startup-gilt.vercel.app/'
