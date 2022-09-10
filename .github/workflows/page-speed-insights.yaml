@@ -5,7 +5,7 @@ on:
       - main
       - development
 jobs:
- Running_Page_Speed_Insights:
+  Running_Page_Speed_Insights:
     steps:
       - name Running Page Speed Insights
       uses: jakepartusch/psi-action@v1.2
