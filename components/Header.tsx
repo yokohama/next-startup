@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { useAuth } from 'hook/AuthContext'
 
 import { ShowWithLogin, ShowWithNoLogin } from 'components/Display' 
-import { UserLoginButton, UserLogoutButton } from 'components/button/LoginButton'
+import { SessionButton } from 'components/button/SessionButton'
+import { ActiveLink } from './link/ActiveLink'
+import Image from 'next/image'
 
 export const Header = () => {
   const { currentUser } = useAuth()
@@ -14,16 +16,17 @@ export const Header = () => {
         <div className='container mx-auto px-6 flex items-center justify-between'>
           <Link href='/'>
             <div className='uppercase text-gray-800 font-black text-3xl'>
-              <img src='/images/logo.png' width='70' aria-hidden='true' />
+              <Image src='/images/logo.png' width='70' height='70' alt='logo' />
             </div>
           </Link>
           <div className='flex items-center'>
             <nav className='font-sen text-gray-800 uppercase text-lg lg:flex items-center hidden'>
               <ShowWithNoLogin required={currentUser}>
-                <UserLoginButton>ログイン</UserLoginButton>
+                <SessionButton sessionButtonKey='login' />
               </ShowWithNoLogin>
               <ShowWithLogin required={currentUser}>
-                <UserLogoutButton>ログアウト</UserLogoutButton>
+                <ActiveLink href='/dashboard'>Dashboard</ActiveLink>
+                <SessionButton sessionButtonKey='logout' />
               </ShowWithLogin>
             </nav>
             { /* TODO: ここにススマフォサイズ実装 */}

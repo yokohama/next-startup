@@ -21,6 +21,7 @@ export const Index = () => {
             </Link>
             <a href='https://github.com/yokohama/next-startup' 
               target='_blank'
+              rel='noreferrer'
               className='uppercase py-2 px-4 bg-transparent border-2 border-gray-800 text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white text-md'
             >Documentation</a>
           </div>
