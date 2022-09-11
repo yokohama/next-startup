@@ -22,7 +22,7 @@ export const SessionButton = ({sessionButtonKey}:
   const router = useRouter()
 
   const handleOnLogin = () => {
-    router.push('/dashboard')
+    router.push('https://next-startup-git-development-yokohama1.vercel.app')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => { console.error(e)} )
   }
