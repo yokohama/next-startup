@@ -1,16 +1,19 @@
-name: GitHub Actions Demo
+name: Page Seed Insight
+
 on: [push]
+
 jobs:
   Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
+      - name: "branch name check"
       - run: |
-          echo '1' $GITHUB_REF
-          echo '2' ${{ github.ref }}
-          echo '3' ${{ github.ref_name }}
-          echo '4' ${{ github.head_ref }}
-          echo '5' ${{ github.base_ref }}
+          echo 'branch name = ' ${{ github.head_ref }}
+        - if: ${{ github.ref_name }} === 'main' && URL = 'hoge'
+        - if: ${{ github.ref_name }} === 'development' && URL = 'foo'
+
       - name: "[ Mobile ] Running Page Speed Insights"
+        echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
@@ -21,6 +24,7 @@ jobs:
           key: ${{ secrets.PSI_APIKEY }}
 
       - name: "[ Desktop ] Running Page Speed Insights"
+        echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
