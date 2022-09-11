@@ -32,3 +32,7 @@ jobs:
 
       - name: "[ Desktop ] Running Page Speed Insights"
         uses: ./.github/actions/psi
+        with:
+          url: 'https://next-startup-front-dev.yuhei.yokohama'
+          threshold: 90
+          strategy: mobile
