@@ -1,12 +1,12 @@
 name: '[ Main ] Page Seed Insight'
 
 on: 
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  Page-Speed-Insight:
+  Main-Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
       - name: "[ Mobile ] Running Page Speed Insights"
