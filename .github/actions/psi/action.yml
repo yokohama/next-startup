@@ -11,7 +11,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: '[ Mobile ] ' ${{ inputs.url }}
+    - name: "[ Mobile ] ${{ inputs.url }}"
       uses: jakepartusch/psi-action@v1.2
       id: mobile_page_speed_insigths
       with:
@@ -20,7 +20,7 @@ runs:
         strategy: mobile
         key: ${{ inputs.key }}
   
-    - name: '[ Desktop ] ' ${{ inputs.url }}
+    - name: "[ Desktop ] ${{ inputs.url }}"
       uses: jakepartusch/psi-action@v1.2
       id: desktop_page_speed_insigths
       with:
