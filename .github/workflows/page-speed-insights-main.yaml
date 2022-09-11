@@ -34,11 +34,10 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v3
 
-      - name: "[ Mobile ] Running Page Speed Insights"
+      - name: "Running Page Speed Insights"
         uses: ./.github/actions/psi
         with:
-          development_url: ${{ secrets.DEVELOPMENT_URL }}
-          production_url: ${{ secrets.PRODUCTION_URL }}
+          url: ${{ secrets.PRODUCTION_URL }}
           mobile_threshold: 90
           desktop_threshold: 90
           key: ${{ secrets.PSI_APIKEY }}
