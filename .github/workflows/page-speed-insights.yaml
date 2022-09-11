@@ -1,3 +1,5 @@
+# PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
+
 name: Page Seed Insight
 
 on: [push]
@@ -17,18 +19,16 @@ jobs:
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
-          url: ${URL}
+          url: ${{ URL }}
           threshold: 90
           strategy: mobile
-          # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
 
       - name: "[ Desktop ] Running Page Speed Insights"
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
-          url: ${URL}
+          url: ${{ URL }}
           threshold: 90
           strategy: desktop
-          # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
