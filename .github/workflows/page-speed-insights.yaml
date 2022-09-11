@@ -1,39 +1,10 @@
-#name: GitHub Actions
-#on: 
-#  push
-#jobs:
-#  Page-Speed-Insights:
-#    runs-on: ubuntu-latest
-#    - steps:
-#      - name: [Mobile] Running Page Speed Insights
-#        uses: jakepartusch/psi-action@v1.2
-#        id: desktop_page_speed_insigths
-#        with:
-#          url: 'https://next-startup-gilt.vercel.app/'
-#          threshold: 90
-#          strategy: mobole
-#          # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
-#          key: ${{ secrets.PSI_APIKEY }}
-            
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."            
-
-      - name: "[Mobile] Running Page Speed Insights"
+      - name: "[ Mobile ] Running Page Speed Insights"
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
@@ -43,7 +14,7 @@ jobs:
           # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
 
-      - name: "[Desktop] Running Page Speed Insights"
+      - name: "[ Desktop ] Running Page Speed Insights"
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
