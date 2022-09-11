@@ -13,7 +13,7 @@ jobs:
         - if: ${{ github.ref_name }} === 'development' && URL = 'foo'
 
       - name: "[ Mobile ] Running Page Speed Insights"
-        echo ${URL}
+        run: echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
@@ -24,7 +24,7 @@ jobs:
           key: ${{ secrets.PSI_APIKEY }}
 
       - name: "[ Desktop ] Running Page Speed Insights"
-        echo ${URL}
+        run: echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
