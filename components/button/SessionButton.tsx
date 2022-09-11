@@ -22,7 +22,7 @@ export const SessionButton = ({sessionButtonKey}:
   const router = useRouter()
 
   const handleOnLogin = () => {
-    router.push('https://next-startup-front-dev.yuhei.yokohama/dashboard')
+    router.push('/dashboard')
     signInWithRedirect(auth, provider).then(() => {
     }).catch(e => { console.error(e)} )
   }
