@@ -4,6 +4,12 @@ jobs:
   Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo '1' $GITHUB_REF
+          echo '2' ${{ github.ref }}
+          echo '3' ${{ github.ref_name }}
+          echo '4' ${{ github.head_ref }}
+          echo '5' ${{ github.base_ref }}
       - name: "[ Mobile ] Running Page Speed Insights"
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
@@ -23,3 +29,5 @@ jobs:
           strategy: desktop
           # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
+            
+            https://next-startup-git-development-yokohama1.vercel.app/
