@@ -15,7 +15,7 @@ jobs:
         if: ${{ github.ref_name }} != 'development'
         run: echo 'VERCEL_URL=https://next-startup-gilt-development-yokohama1.vercel.app/' >> $GITHUB_ENV
       - name: "branch name check"
-        run: echo ${{ env }}
+        run: echo ${{ env.VERCEL_URL }}
 
 #      - name: "[ Mobile ] Running Page Speed Insights"
 #        uses: jakepartusch/psi-action@v1.2
