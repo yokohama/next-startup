@@ -1,9 +1,8 @@
-# PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
-
 name: Page Seed Insight
 
 on: [push]
 
+# PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
 jobs:
   Page-Speed-Insight:
     runs-on: ubuntu-latest
