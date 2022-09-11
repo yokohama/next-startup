@@ -1,0 +1,29 @@
+name: Page Seed Insight
+
+on: 
+  pull_request:
+    - development
+
+jobs:
+  Page-Speed-Insight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "[ Mobile ] Running Page Speed Insights"
+        uses: jakepartusch/psi-action@v1.2
+        id: mobile_page_speed_insigths
+        with:
+          url: 'https://next-startup-git-development-yokohama1.vercel.app/'
+          threshold: 90
+          strategy: mobile
+          key: ${{ secrets.PSI_APIKEY }}
+
+      - name: "[ Desktop ] Running Page Speed Insights"
+        uses: jakepartusch/psi-action@v1.2
+        id: desktop_page_speed_insigths
+        with:
+          url: 'https://next-startup-git-development-yokohama1.vercel.app/'
+          threshold: 90
+          strategy: desktop
+          key: ${{ secrets.PSI_APIKEY }}
+
+        #run: echo 'VERCEL_URL=https://next-startup-gilt.vercel.app/' >> $GITHUB_ENV
