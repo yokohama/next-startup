@@ -17,20 +17,20 @@ jobs:
       - name: "branch name check"
         run: echo ${{ env.VERCEL_URL }}
 
-#      - name: "[ Mobile ] Running Page Speed Insights"
-#        uses: jakepartusch/psi-action@v1.2
-#        id: mobile_page_speed_insigths
-#        with:
-#          url: ${{ URL }}
-#          threshold: 90
-#          strategy: mobile
-#          key: ${{ secrets.PSI_APIKEY }}
-#
-#      - name: "[ Desktop ] Running Page Speed Insights"
-#        uses: jakepartusch/psi-action@v1.2
-#        id: desktop_page_speed_insigths
-#        with:
-#          url: ${{ URL }}
-#          threshold: 90
-#          strategy: desktop
-#          key: ${{ secrets.PSI_APIKEY }}
+      - name: "[ Mobile ] Running Page Speed Insights"
+        uses: jakepartusch/psi-action@v1.2
+        id: mobile_page_speed_insigths
+        with:
+          url: ${{ env.VERCEL_URL }}
+          threshold: 90
+          strategy: mobile
+          key: ${{ secrets.PSI_APIKEY }}
+
+      - name: "[ Desktop ] Running Page Speed Insights"
+        uses: jakepartusch/psi-action@v1.2
+        id: desktop_page_speed_insigths
+        with:
+          url: ${{ env.VERCEL_URL }}
+          threshold: 90
+          strategy: desktop
+          key: ${{ secrets.PSI_APIKEY }}
