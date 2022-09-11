@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "branch name check"
-        - run: echo 'branch name = ' ${{ github.head_ref }}
+      - run: echo 'branch name = ' ${{ github.head_ref }}
         #- if: ${{ github.ref_name }} == 'main'
-        - run: echo 'https://next-startup-gilt.vercel.app/' > URL
+      - run: echo 'https://next-startup-gilt.vercel.app/' > URL
         #- if: ${{ github.ref_name }} != 'development'
-        - run: echo 'https://next-startup-gilt-development-yokohama1.vercel.app/' > URL
+      - run: echo 'https://next-startup-gilt-development-yokohama1.vercel.app/' > URL
 
 #      - name: "[ Mobile ] Running Page Speed Insights"
 #        uses: jakepartusch/psi-action@v1.2
