@@ -31,6 +31,9 @@ jobs:
   Main-Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
       - name: "[ Mobile ] Running Page Speed Insights"
         uses: ./.github/actions/psi
         with:
