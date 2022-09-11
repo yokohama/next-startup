@@ -17,6 +17,6 @@ runs:
       id: desktop_page_speed_insigths
       with:
         url: ${{ inputs.url }}
-        threshold: ${{ threshold }}
+        threshold: ${{ inputs.threshold }}
         strategy: ${{ inputs.strategy }}
         key: ${{ secrets.PSI_APIKEY }}
