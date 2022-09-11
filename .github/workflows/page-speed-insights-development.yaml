@@ -13,7 +13,7 @@ jobs:
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
-          url: 'https://next-startup-git-development-yokohama1.vercel.app/'
+          url: 'https://next-startup-front-dev.yuhei.yokohama'
           threshold: 90
           strategy: mobile
           key: ${{ secrets.PSI_APIKEY }}
@@ -22,7 +22,7 @@ jobs:
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
-          url: 'https://next-startup-git-development-yokohama1.vercel.app/'
+          url: 'https://next-startup-front-dev.yuhei.yokohama'
           threshold: 90
           strategy: desktop
           key: ${{ secrets.PSI_APIKEY }}
