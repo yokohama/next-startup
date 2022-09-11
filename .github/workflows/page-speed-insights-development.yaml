@@ -6,23 +6,16 @@ on:
       - development
 
 jobs:
-  Development-Page-Speed-Insight:
+  Main-Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
-      - name: "[ Mobile ] Running Page Speed Insights"
-        uses: jakepartusch/psi-action@v1.2
-        id: mobile_page_speed_insigths
-        with:
-          url: ${{ secrets.DEVELOPMENT_URL }}
-          threshold: 90
-          strategy: mobile
-          key: ${{ secrets.PSI_APIKEY }}
+      - name: "Checkout"
+        uses: actions/checkout@v3
 
-      - name: "[ Desktop ] Running Page Speed Insights"
-        uses: jakepartusch/psi-action@v1.2
-        id: desktop_page_speed_insigths
+      - name: "Running Page Speed Insights"
+        uses: ./.github/actions/psi
         with:
           url: ${{ secrets.DEVELOPMENT_URL }}
-          threshold: 90
-          strategy: desktop
+          mobile_threshold: 90
+          desktop_threshold: 90
           key: ${{ secrets.PSI_APIKEY }}

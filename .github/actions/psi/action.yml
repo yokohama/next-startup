@@ -1,7 +1,5 @@
 inputs:
-  development_url:
-    required: true
-  production_url:
+  url:
     required: true
   mobile_threshold:
     required: true
@@ -13,7 +11,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: "[ Mobile ] Running Page Speed Insights"
+    - name: "[ Mobile ] ${{ inputs.url }}"
       uses: jakepartusch/psi-action@v1.2
       id: mobile_page_speed_insigths
       with:
@@ -22,7 +20,7 @@ runs:
         strategy: mobile
         key: ${{ inputs.key }}
   
-    - name: "[ Desktop ] Running Page Speed Insights"
+    - name: "[ Desktop ] ${{ inputs.url }}"
       uses: jakepartusch/psi-action@v1.2
       id: desktop_page_speed_insigths
       with:
