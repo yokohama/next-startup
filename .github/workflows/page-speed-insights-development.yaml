@@ -27,5 +27,8 @@ jobs:
       #    strategy: desktop
       #    key: ${{ secrets.PSI_APIKEY }}
 
+      - name: Checkout
+        uses: actions/checkout@master
+
       - name: "[ Desktop ] Running Page Speed Insights"
         uses: ./.github/actions/psi
