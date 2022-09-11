@@ -6,11 +6,11 @@ jobs:
   Page-Speed-Insight:
     runs-on: ubuntu-latest
     steps:
-      - name: "branch name check"
-      - run: |
-          echo 'branch name = ' ${{ github.head_ref }}
-        - if: ${{ github.ref_name }} === 'main' && URL = 'hoge'
-        - if: ${{ github.ref_name }} === 'development' && URL = 'foo'
+#      - name: "branch name check"
+#      - run: |
+#          echo 'branch name = ' ${{ github.head_ref }}
+#        - if: ${{ github.ref_name }} === 'main' && URL = 'hoge'
+#        - if: ${{ github.ref_name }} === 'development' && URL = 'foo'
 
       - name: "[ Mobile ] Running Page Speed Insights"
         run: echo ${URL}
