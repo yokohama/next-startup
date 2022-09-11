@@ -13,7 +13,7 @@ export const Index = () => {
             Next Support Production
           </h1>
           <h2 className='font-light max-w-2xl mx-auto w-full text-xl dark:text-white text-gray-500 text-center py-8'>
-            毎度同じもの作るの面面倒なの、基本的に必要なるものをいれておきます。
+            毎度、同じもの作るの面面倒なので、基本的に必要なるものをいれておきます。
           </h2>
           <div className='flex items-center justify-center mt-4'>
             <Link href={ currentUser ? '/dashboard' : '/get_start' }>
