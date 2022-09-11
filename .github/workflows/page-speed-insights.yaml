@@ -13,7 +13,6 @@ jobs:
 #        - if: ${{ github.ref_name }} === 'development' && URL = 'foo'
 
       - name: "[ Mobile ] Running Page Speed Insights"
-        run: echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: mobile_page_speed_insigths
         with:
@@ -24,7 +23,6 @@ jobs:
           key: ${{ secrets.PSI_APIKEY }}
 
       - name: "[ Desktop ] Running Page Speed Insights"
-        run: echo ${URL}
         uses: jakepartusch/psi-action@v1.2
         id: desktop_page_speed_insigths
         with:
@@ -34,4 +32,4 @@ jobs:
           # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
             
-            https://next-startup-git-development-yokohama1.vercel.app/
+#            https://next-startup-git-development-yokohama1.vercel.app/
