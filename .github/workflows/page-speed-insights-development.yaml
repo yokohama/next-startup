@@ -2,7 +2,8 @@ name: Page Seed Insight
 
 on: 
   pull_request:
-    - development
+    branches:
+      - development
 
 jobs:
   Page-Speed-Insight:
