@@ -1,16 +1,17 @@
-runs:
-  inputs:
-    development_url:
-      required: true
-    production_url:
-      required: true
-    mobile_threshold:
-      required: true
-    desktop_threshold:
-      required: true
-    key:
-      required: true
+inputs:
+  development_url:
+    required: true
+  production_url:
+    required: true
+  mobile_threshold:
+    required: true
+  desktop_threshold:
+    required: true
+  key:
+    required: true
 
+runs:
+  using: "composite"
   steps:
     - name: "[ Mobile ] Running Page Speed Insights"
       uses: jakepartusch/psi-action@v1.2
