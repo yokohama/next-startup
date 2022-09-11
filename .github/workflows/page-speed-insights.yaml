@@ -2,16 +2,15 @@ name: GitHub Actions
 on: 
   push
 jobs:
-  Explore-GitHub-Actions:
   Page-Speed-Insights:
     runs-on: ubuntu-latest
-    steps:
-      - name: Running Page Speed Insights
+    - steps:
+      - name: [Mobile] Running Page Speed Insights
         uses: jakepartusch/psi-action@v1.2
-        id: page_speed_insigths
+        id: desktop_page_speed_insigths
         with:
           url: 'https://next-startup-gilt.vercel.app/'
-          threshold: 70
-          strategy: mobile
+          threshold: 90
+          strategy: mobole
           # PSI_APIKEY = @see https://developers.google.com/speed/docs/insights/v5/get-started
           key: ${{ secrets.PSI_APIKEY }}
