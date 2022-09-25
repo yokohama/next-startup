@@ -1,11 +1,15 @@
 inputs:
   url:
+    description: ''
     required: true
   mobile_threshold:
+    description: ''
     required: true
   desktop_threshold:
+    description: ''
     required: true
   key:
+    description: ''
     required: true
 
 runs:
