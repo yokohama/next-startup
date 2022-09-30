@@ -1,12 +1,30 @@
+import { auth, useAuth } from 'hook/AuthContext'
+
 import { Alert } from "components/Alert"
 import { DashboardProps } from "components/DashboardLayout"
+import { updateCurrentUser } from 'firebase/auth'
 
 export const Settings = ({alertList, setAlertList}: DashboardProps) => {
-  const handleOnClick = () => {
+  const { currentUser } = useAuth()
+
+  const handleOnClickAlert = () => {
     setAlertList([
       ...alertList, 
       <Alert key={alertList.length+1} message='なにかが発生しました！' />
     ])
+  }
+  
+  const handleOnClickApi = () => {
+    currentUser?.getIdToken(true)
+      .then(idToken => {
+        fetch('http://localhost:4010/users', {
+          headers: { 'Authorization': `Bearer: ${idToken}` }
+        })
+          .then(res => console.log(res))
+          .catch(e => {
+            console.log(e)
+          })
+      })
   }
 
   return (
@@ -28,7 +46,8 @@ export const Settings = ({alertList, setAlertList}: DashboardProps) => {
             以下、動作確認用
           </p>
           <ul>
-           <li><a href='#' onClick={handleOnClick}>アラート発火</a></li>
+           <li><a href='#' onClick={handleOnClickAlert}>アラート発火</a></li>
+           <li><a href='#' onClick={handleOnClickApi}>APIコール</a></li>
           </ul>
         </div>
       </div>

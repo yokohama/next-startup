@@ -12,31 +12,22 @@ import { useRouter } from 'next/router'
 
 import { initializeApp } from 'firebase/app'
 import {
-  User,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged
 } from 'firebase/auth'
 import { FirebaseConfig } from 'lib/Firebase'
 
-type AuthContextType = {
-  currentUser: User | null
-  setCurrentUser?: Dispatch<SetStateAction<User | null>>
-}
-
 export const app = initializeApp(FirebaseConfig)
 export const auth = getAuth(app)
 export const provider = new GoogleAuthProvider
 
-const AuthContext = createContext<AuthContextType>({currentUser: auth.currentUser})
+const AuthContext = createContext({currentUser: auth.currentUser})
 export const useAuth = () => {
   return useContext(AuthContext)
 }
 
-type Props = {
-  children: ReactNode
-}
-export const AuthProvider = ({ children }: Props) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter()
   const pathname = router.pathname
 
@@ -48,7 +39,7 @@ export const AuthProvider = ({ children }: Props) => {
     })
   }, [auth.currentUser])
   
-  const PublicPathname: string[] = [
+  const publicPathname: string[] = [
     '/',
     '/about',
     '/faq',
@@ -57,19 +48,19 @@ export const AuthProvider = ({ children }: Props) => {
     '/get_start',
   ]
   
-  const LoggedInPathname: string[] = [
+  const loggedInPathname: string[] = [
     '/dashboard'
   ]
   
-  const values: AuthContextType = {
+  const values = {
     currentUser,
     setCurrentUser
   }
   
   return (
     <AuthContext.Provider value={values}>
-      { PublicPathname.includes(pathname) && children }
-      { LoggedInPathname.includes(pathname) && currentUser && children }
+      { publicPathname.includes(pathname) && children }
+      { loggedInPathname.includes(pathname) && currentUser && children }
     </AuthContext.Provider>
   )
 }
