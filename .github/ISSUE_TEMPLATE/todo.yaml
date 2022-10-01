@@ -1,5 +1,5 @@
-name: Bug Report
-description: File a bug report
+name: Todo
+description: Todo
 title: "[Todo]: "
 labels: ["todo", "enhancement"]
 assignees:
@@ -10,7 +10,7 @@ body:
       value: |
         使い方自由。思いついたアイディア、忘れないうちにメモっておこう。
   - type: textarea
-    id: textarea-1
+    id: todo-1
     attributes:
       label: TODO
       description: アイディアや課題などなんでも自由にどうぞ。
