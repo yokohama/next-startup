@@ -50,7 +50,9 @@ body:
       label: 再現手順
       description: 他の人が再現できるように手順を詳細に記入して下さい。
       placeholder: Tell us what you see!
-      value: "A bug happened!"
+      value: |
+        1. hoge
+        2. moge
     validations:
       required: false
   - type: textarea
@@ -58,8 +60,8 @@ body:
     attributes:
       label: 修正方法
       description: ファイル名や該当箇所など修正に検討が付く場合は記入してください。
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      placeholder:
+      value:
     validations:
       required: false
   - type: textarea
@@ -67,7 +69,7 @@ body:
     attributes:
       label: エビデンス
       description: ログ、キャプチャー、その他URLなど証跡がある場合は記入してください。
-      placeholder: Tell us what you see!
+      placeholder:
       value:
     validations:
       required: false
