@@ -20,13 +20,12 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
+      label: 概要
+      description: バグの概要を大まかに記載してください。
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
       required: true
-  
   - type: textarea
     id: what-happened2
     attributes:
