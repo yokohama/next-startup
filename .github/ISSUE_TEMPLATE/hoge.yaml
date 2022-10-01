@@ -62,9 +62,12 @@ body:
       value: "A bug happened!"
     validations:
       required: true
-  - type: textarea-6
-    id: logs
+  - type: textarea
+    id: textarea-6
     attributes:
-      label: ログやエビデンスのキャプチャーやURLなどが有れば記入して下さい。
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      label: 修正方法
+      description: ファイル名や該当箇所など修正に検討が付く場合は記入してください。
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
