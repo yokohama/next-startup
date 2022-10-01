@@ -21,7 +21,7 @@ body:
     id: what-happened
     attributes:
       label: 概要
-      description: バグの概要を大まかに記載してください。
+      description: バグの概要を大まかに記入してください。
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
@@ -29,8 +29,17 @@ body:
   - type: textarea
     id: what-happened2
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
+      label: 環境
+      description: バグの発生した環境の詳細を記入して下さい。
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened3
+    attributes:
+      label: 再現手順
+      description: 他の人が再現できるように手順を詳細に記入して下さい。
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
