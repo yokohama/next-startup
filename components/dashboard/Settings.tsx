@@ -17,6 +17,7 @@ export const Settings = ({alertList, setAlertList}: DashboardProps) => {
   const handleOnClickApi = () => {
     currentUser?.getIdToken(true)
       .then(idToken => {
+        console.log(idToken)
         fetch('http://localhost:4010/users', {
           headers: { 'Authorization': `Bearer: ${idToken}` }
         })
