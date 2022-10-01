@@ -18,7 +18,7 @@ body:
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: textarea-1
     attributes:
       label: 概要
       description: バグの概要を大まかに記入してください。
@@ -27,7 +27,16 @@ body:
     validations:
       required: true
   - type: textarea
-    id: what-happened2
+    id: textarea-2
+    attributes:
+      label: 期待する動作
+      description: 本来どのように動くべきかを詳細に記入して下さい。
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: textarea-3
     attributes:
       label: 環境
       description: バグの発生した環境の詳細を記入して下さい。
@@ -36,10 +45,19 @@ body:
     validations:
       required: true
   - type: textarea
-    id: what-happened3
+    id: textarea-4
     attributes:
       label: 再現手順
       description: 他の人が再現できるように手順を詳細に記入して下さい。
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: textarea-5
+    attributes:
+      label: 修正方法
+      description: ファイル名や該当箇所など修正に検討が付く場合は記入してください。
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
