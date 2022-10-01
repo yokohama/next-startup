@@ -43,7 +43,7 @@ body:
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: textarea-4
     attributes:
@@ -52,7 +52,7 @@ body:
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: textarea-5
     attributes:
@@ -61,13 +61,13 @@ body:
       placeholder: Tell us what you see!
       value: "A bug happened!"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: textarea-6
     attributes:
-      label: 修正方法
-      description: ファイル名や該当箇所など修正に検討が付く場合は記入してください。
+      label: エビデンス
+      description: ログ、キャプチャー、その他URLなど証跡がある場合は記入してください。
       placeholder: Tell us what you see!
-      value: "A bug happened!"
+      value:
     validations:
-      required: true
+      required: false
