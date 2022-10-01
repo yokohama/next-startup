@@ -32,8 +32,11 @@ body:
     attributes:
       label: 環境
       description: バグの発生した環境の詳細を記入して下さい。
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      placeholder: |
+        Ubuntu 20.04.1
+        docker 20.10.18
+        docker compose v2.10.2
+      value:
     validations:
       required: false
   - type: textarea
@@ -41,11 +44,11 @@ body:
     attributes:
       label: 再現手順
       description: 他の人が再現できるように手順を詳細に記入して下さい。
-      placeholder: Tell us what you see!
-      value: |
+      placeholder: |
         1. まず、あれをあーする。
         2. 次に、これをこーする。
         3. そうすると、こうなる。
+      value:
     validations:
       required: false
   - type: textarea
