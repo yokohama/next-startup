@@ -9,14 +9,6 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
   - type: textarea
     id: textarea-1
     attributes:
@@ -51,8 +43,9 @@ body:
       description: 他の人が再現できるように手順を詳細に記入して下さい。
       placeholder: Tell us what you see!
       value: |
-        1. hoge
-        2. moge
+        1. まず、あれをあーする。
+        2. 次に、これをこーする。
+        3. そうすると、こうなる。
     validations:
       required: false
   - type: textarea
