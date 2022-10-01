@@ -28,7 +28,7 @@ body:
       required: true
   
   - type: textarea
-    id: what-happened
+    id: what-happened2
     attributes:
       label: What happened?
       description: Also tell us, what did you expect to happen?
